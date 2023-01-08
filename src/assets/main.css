@@ -1,0 +1,7 @@
+@import './base.css';
+@import './icons/profession-icons.css';
+@import './icons/crafting-icons.css';
+
+body{
+  background: url('@/assets/imgs/bg1.jpg');
+}

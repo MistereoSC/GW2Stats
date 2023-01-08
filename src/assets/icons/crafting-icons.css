@@ -1,0 +1,36 @@
+.crafting-icon-armorsmith, .crafting-icon-artificer, .crafting-icon-chef,
+.crafting-icon-huntsman, .crafting-icon-jeweler, .crafting-icon-leatherworker,
+.crafting-icon-scribe, .crafting-icon-tailor, .crafting-icon-weaponsmith {
+  background-image: url('./crafting-icons.png');
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+}
+
+.crafting-icon-armorsmith {
+  background-position: 0px 0px;
+}
+.crafting-icon-artificer {
+  background-position: -20px 0px;
+}
+.crafting-icon-chef {
+  background-position: -40px 0px;
+}
+.crafting-icon-huntsman {
+  background-position: 0px -20px;
+}
+.crafting-icon-jeweler {
+  background-position: -40px -20px;
+}
+.crafting-icon-leatherworker {
+  background-position: -20px -20px;
+}
+.crafting-icon-scribe {
+  background-position: 0px -40px;
+}
+.crafting-icon-tailor {
+  background-position: -20px -40px;
+}
+.crafting-icon-weaponsmith {
+  background-position: -40px -40px;
+}

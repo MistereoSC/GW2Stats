@@ -1,0 +1,70 @@
+{
+  "bags": [
+    {
+      "id": 8932,
+      "size": 20,
+      "inventory": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 8941,
+      "size": 4,
+      "inventory": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 8941,
+      "size": 4,
+      "inventory": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 8941,
+      "size": 4,
+      "inventory": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 8941,
+      "size": 4,
+      "inventory": [
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}
