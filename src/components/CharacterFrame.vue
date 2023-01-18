@@ -45,6 +45,7 @@
 
   border: 2px solid transparent;
   border-right: 8px solid var(--c-text-item-title);
+  user-select: none;
 }
 .main-container:hover {
   border-left-color: var(--c-accent-darkred);
@@ -91,8 +92,8 @@
   color: var(--color-text);
 
   position: absolute;
-  top: 110%;
-  left: 110%;
+  top: -130%;
+  left: -50%;
   z-index: 1;
 
   padding: 2px 8px;

@@ -8,6 +8,7 @@ of all your characters.
 ## Usage
 
 When entering the URL, you have to append your GW2 Auth Token with ?token=\<AUTHTOKEN\>
+You can click an item to open its wiki page, or alt-click to copy its chat-link to the clipboard.
 
 ## Project Setup
 
