@@ -1,0 +1,14 @@
+.input-textarea{
+  appearance:none;
+  border:none;
+  border-bottom: 2px solid var(--c-accent-darkred);
+  margin:0;
+  box-sizing: border-box;
+  outline: 0px none transparent;
+  height: 34px;
+  width: 512px;
+  font-size: 12pt;
+  padding: 0px 8px 0px 8px;
+  background: var(--color-background);
+  color: var(--color-text);
+}
