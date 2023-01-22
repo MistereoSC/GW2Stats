@@ -6,7 +6,7 @@
       </div>
       <div class="sub-container">
         <button @click="authenticate">Verify</button>
-        <a href="https://account.arena.net/applications" target="_blank">Get your Token</a>
+        <a href="https://account.arena.net/applications" target="_blank">Get your GW2 API-Key</a>
       </div>
       <div v-if="errcode!=200&&errcode!=0">
         <p>Invalid Token</p>
@@ -26,7 +26,8 @@
         </ul>
       </div>
       <div>
-        <button v-if="errcode==200" @click="confirmAction">Confirm</button>
+        <button v-if="errcode==200&&this.sufficientPermissions==true" @click="confirmAction">Confirm</button>
+        <p v-if="errcode==200&&this.sufficientPermissions==false">Your token requires permissions to 'characters' and 'inventories'</p>
       </div>
     </div>
   </div>
@@ -68,13 +69,17 @@
 
 .permission-li.active::before{
   content: 'o  ';
-  color:green
+  color:green;
+  font-weight:bold;
 }
 .permission-li.inactive::before{
   content: 'X  ';
-  color:red
+  color:red;
+  font-weight:bold;
 }
-
+a a:link, a:visited, a:hover, a:active{
+  color: var(--c-accent-darkred)
+}
 
 </style>
 
@@ -99,11 +104,32 @@ export default {
         inventories: false,
         unlocks: false
       },
-      errcode: 0
+      errcode: 0,
+      sufficientPermissions: false,
+      loading: false
     }
   },
   methods: {
     async authenticate() {
+      if(this.loading){return}
+      this.loading=true
+      this.errcode=0
+      this.sufficientPermissions=false
+      this.token=""
+      this.permissions = {
+        tradingpost: false,
+        characters: false,
+        pvp: false,
+        progression: false,
+        wallet: false,
+        guilds: false,
+        builds: false,
+        account: false,
+        inventories: false,
+        unlocks: false
+      }
+
+      if(this.tokenInput.length==0){return}
       var resp = await axios
         .get("https://api.guildwars2.com/v2/tokeninfo?access_token="+this.tokenInput)
         .then(res=>{return res})
@@ -119,14 +145,14 @@ export default {
         if(resp.data.permissions.includes('account')){this.permissions.account=true}
         if(resp.data.permissions.includes('inventories')){this.permissions.inventories=true}
         if(resp.data.permissions.includes('unlocks')){this.permissions.unlocks=true}
+        if(this.permissions.characters==true&&this.permissions.inventories==true){this.sufficientPermissions=true}
         this.token=this.tokenInput
         this.errcode=200
-        console.log(resp)
       }
       else{
         this.errcode=resp.status
-        console.log(resp)
       }
+      this.loading=false
     },
     confirmAction() {
       this.$emit('validated', this.token, this.permissions)
